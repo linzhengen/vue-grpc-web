@@ -1,0 +1,3 @@
+[submodule "protobuf/vendor/protobuf"]
+	path = protobuf/vendor/protobuf
+	url = https://github.com/protocolbuffers/protobuf.git
