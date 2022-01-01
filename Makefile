@@ -21,7 +21,7 @@ PROTOC ?= protoc
 
 
 FLAGS+= --proto_path=.:$(PROTOINCLUDE)
-FLAGS+= --go_out=./backend/pb --grpc_out=./backend/pb
+FLAGS+= --go_out=./backend/pb --go-grpc_out=./backend/pb --go-grpc_opt require_unimplemented_servers=false
 FLAGS+= --js_out=import_style=commonjs,binary:./frontend/src
 FLAGS+= --grpc-web_out=import_style=typescript,mode=grpcweb:./frontend/src
 FLAGS+=	--plugin=protoc-gen-grpc=$(GRPCPLUGIN)
