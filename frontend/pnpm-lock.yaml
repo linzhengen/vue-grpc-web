@@ -1,9 +1,9 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@types/google-protobuf': ^3.15.5
   '@vitejs/plugin-vue': ^2.0.0
   google-protobuf: ^3.19.1
-  protoc-gen-ts: ^0.8.1
   typescript: ^4.4.4
   vite: ^2.7.2
   vue: ^3.2.25
@@ -13,9 +13,9 @@ dependencies:
   vue: 3.2.26
 
 devDependencies:
+  '@types/google-protobuf': 3.15.5
   '@vitejs/plugin-vue': 2.0.1_vite@2.7.10+vue@3.2.26
   google-protobuf: 3.19.1
-  protoc-gen-ts: 0.8.1_b77bfd7558b0a654922f5c0854e032c1
   typescript: 4.5.4
   vite: 2.7.10
   vue-tsc: 0.29.8_typescript@4.5.4
@@ -54,6 +54,10 @@ packages:
 
   /@emmetio/scanner/1.0.0:
     resolution: {integrity: sha512-8HqW8EVqjnCmWXVpqAOZf+EGESdkR27odcMMMGefgKXtar00SoYNSryGv//TELI4T3QFsECo78p+0lmalk/CFA==}
+    dev: true
+
+  /@types/google-protobuf/3.15.5:
+    resolution: {integrity: sha512-6bgv24B+A2bo9AfzReeg5StdiijKzwwnRflA8RLd1V4Yv995LeTmo0z69/MPbBDFSiZWdZHQygLo/ccXhMEDgw==}
     dev: true
 
   /@vitejs/plugin-vue/2.0.1_vite@2.7.10+vue@3.2.26:
@@ -599,17 +603,6 @@ packages:
     resolution: {integrity: sha512-nolQXZ/4L+bP/UGlkfaIujX9BKxGwmQ9OT4mOt5yvy8iK1h3wqTEJCijzGANTCCl9nWjY41juyAn2K3Q1hLLTg==}
     dependencies:
       asap: 2.0.6
-    dev: true
-
-  /protoc-gen-ts/0.8.1_b77bfd7558b0a654922f5c0854e032c1:
-    resolution: {integrity: sha512-T1Gqw8ekPeSmB6vAhpBKT77Fu0gRThwz3QqQ+dhohz/I554a6YhsoF/nKy4Qo1C8Ukoag3RVcYeXz4IBC4643Q==}
-    hasBin: true
-    peerDependencies:
-      google-protobuf: ^3.13.0
-      typescript: '>=4'
-    dependencies:
-      google-protobuf: 3.19.1
-      typescript: 4.5.4
     dev: true
 
   /pug-attrs/3.0.0:

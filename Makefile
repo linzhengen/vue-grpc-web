@@ -46,6 +46,7 @@ evans:
 	evans --host localhost --port 8000 --reflection
 
 init:
+	git submodule --quiet update --init --recursive
 	go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 	go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 	cd frontend && pnpm install
