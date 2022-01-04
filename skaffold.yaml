@@ -5,3 +5,4 @@ metadata:
 requires:
   - path: ./frontend
   - path: ./backend
+  - path: ./envoy

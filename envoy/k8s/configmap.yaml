@@ -50,9 +50,9 @@ data:
                     exact_match: "/healthz"
                   - name: "x-envoy-livenessprobe"
                     exact_match: "healthz"
-              - name: envoy.filters.http.router
               - name: envoy.filters.http.grpc_web
               - name: envoy.filters.http.cors
+              - name: envoy.filters.http.router
       clusters:
       - name: backend-grpc-service
         connect_timeout: 0.5s
