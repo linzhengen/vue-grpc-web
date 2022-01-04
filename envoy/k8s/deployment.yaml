@@ -17,7 +17,7 @@ spec:
           image: envoyproxy/envoy:v1.20.1
           ports:
             - name: http
-              containerPort: 8080
+              containerPort: 9080
           resources:
             requests:
               cpu: 10m
@@ -27,7 +27,7 @@ spec:
               mountPath: /etc/envoy
           readinessProbe:
             httpGet:
-              port: http
+              port: 9080
               httpHeaders:
                 - name: x-envoy-livenessprobe
                   value: healthz

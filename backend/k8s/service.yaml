@@ -9,5 +9,5 @@ spec:
   ports:
     - name: grpc
       protocol: TCP
-      port: 8080
+      port: 50051
   clusterIP: None

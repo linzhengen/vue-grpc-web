@@ -18,10 +18,10 @@ spec:
       - image: grpc
         name: backend-grpc
         ports:
-          - containerPort: 8081
+          - containerPort: 50051
         env:
           - name: PORT
-            value: "8080"
+            value: "50051"
         resources:
           requests:
             cpu: 50m
@@ -29,7 +29,7 @@ spec:
             memory: 128Mi
         readinessProbe:
           exec:
-            command: ["/bin/grpc_health_probe", "-addr=:8080"]
+            command: ["/bin/grpc_health_probe", "-addr=:50051"]
         livenessProbe:
           exec:
-            command: ["/bin/grpc_health_probe", "-addr=:8080"]
+            command: ["/bin/grpc_health_probe", "-addr=:50051"]
