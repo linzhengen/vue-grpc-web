@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: frontend-grpc-web
+  name: frontend-grpc-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend-grpc-web
+  template:
+    metadata:
+      labels:
+        app: frontend-grpc-web
+    spec:
+      containers:
+      - image: vue-web
+        name: frontend-grpc-web
+        ports:
+          - containerPort: 80
+        resources:
+          requests:
+            cpu: 50m
+            ephemeral-storage: 128Mi
+            memory: 128Mi

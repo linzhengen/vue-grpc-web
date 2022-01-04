@@ -25,7 +25,7 @@ func main() {
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = "8090"
+		port = "8080"
 	}
 	listener, err := net.Listen("tcp", ":"+port)
 	if err != nil {
