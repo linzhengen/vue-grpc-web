@@ -1,14 +1,4 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
-defineProps<{ msg: string }>()
-
-const count = ref(0)
-</script>
-
 <template>
-  <h1>{{ msg }}</h1>
-
   <p>
     Recommended IDE setup:
     <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
@@ -32,6 +22,39 @@ const count = ref(0)
     <code>components/HelloWorld.vue</code> to test hot module replacement.
   </p>
 </template>
+
+<script lang="ts">
+import {ref} from 'vue'
+import * as grpcWeb from 'grpc-web'
+import {EchoClient} from '../protobuf/pb/echo/EchoServiceClientPb'
+import {EchoRequest, EchoResponse} from '../protobuf/pb/echo/echo_pb'
+
+export default {
+  setup() {
+    const content = ref<string>('')
+    const count = ref(0)
+    const client = new EchoClient("http://localhost:9000")
+
+    const echo = () => {
+      const request = new EchoRequest()
+      request.setContent((new Date()).toDateString())
+      client.echo(request, null,
+          (err: grpcWeb.RpcError, response: EchoResponse) => {
+            if (err) {
+              console.error('Error code: ' + err.code + ' "' + err.message + '"')
+            } else {
+              content.value = response.getContent()
+            }
+          })
+    }
+    return {
+      count,
+      content,
+      echo
+    }
+  },
+}
+</script>
 
 <style scoped>
 a {
